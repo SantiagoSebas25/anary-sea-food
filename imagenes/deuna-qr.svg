@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <rect width="180" height="180" rx="8" fill="#fff"/>
+  <g fill="#0F2A3D"><path d="M12 12h48v48H12zm9 9v30h30V21zM120 12h48v48h-48zm9 9v30h30V21zM12 120h48v48H12zm9 9v30h30v-30z"/><path d="M75 12h12v12H75zm18 0h12v24H93zm-18 24h24v12H75zm30 6h12v18h-12zm-30 18h18v12H75zm24 6h12v18H99zm18 0h12v12h-12zm18 0h12v24h-12zm24 0h9v12h-9zm-81 18h12v12H78zm18 0h24v12H96zm30 0h12v24h-12zm18 6h12v12h-12zm-72 12h24v12H72zm30 6h12v24h-12zm18 18h12v12h-12zm18 6h12v18h-12zm-66 6h18v12H72zm30 18h18v12h-18zm24-12h12v18h-12zm30 6h12v12h-12z"/></g>
+  <text x="90" y="103" text-anchor="middle" font-family="Arial" font-size="9" fill="#D9621F">DEUNA</text>
+</svg>

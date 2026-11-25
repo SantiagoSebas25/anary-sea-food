@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460">
+  <rect width="360" height="460" fill="#f3f5f2"/>
+  <rect x="36" y="24" width="288" height="412" rx="14" fill="#fff" stroke="#d6ddd8" stroke-width="3"/>
+  <text x="180" y="78" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#0F2A3D">CAPTURA DE PAGO</text>
+  <text x="180" y="124" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#596b62">Anary Sea Food · Pedido A-0012</text>
+  <line x1="68" y1="154" x2="292" y2="154" stroke="#d6ddd8" stroke-width="2"/>
+  <text x="180" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#52645a">Transferencia de muestra</text>
+  <text x="180" y="251" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#267045">$14,00</text>
+  <rect x="75" y="286" width="210" height="49" rx="9" fill="#e1f1e4"/>
+  <text x="180" y="317" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#267045">IMAGEN DE EJEMPLO</text>
+  <text x="180" y="371" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#D9621F">NO ES UN PAGO REAL</text>
+  <text x="180" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#7b8580">Solo para mostrar cómo se verá el comprobante</text>
+</svg>

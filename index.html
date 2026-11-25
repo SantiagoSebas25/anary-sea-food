@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F2A3D">
+  <title>Anary Sea Food | Pedidos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Anary Sea Food, inicio">
+      <span class="brand-icon" aria-hidden="true">🐟</span>
+      <span>Anary <b>Sea Food</b><small>Ambato · Ecuador</small></span>
+    </a>
+    <nav class="demo-nav" aria-label="Vistas del demo">
+      <button class="nav-button active" data-view="cliente">Menú</button>
+      <button class="nav-button" data-view="cajera">Cajera</button>
+      <button class="nav-button" data-view="cocina">Cocina</button>
+      <button class="nav-button" data-view="motorizado">Motorizado</button>
+    </nav>
+    <span class="demo-badge">DEMO</span>
+  </header>
+
+  <main>
+    <section id="vista-cliente" class="view active">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Sabor a leña, hecho con cariño</p>
+          <h1>Un buen pescado<br><em>siempre reúne.</em></h1>
+          <p>Disfruta nuestro pescado frito y acompañamientos favoritos.</p>
+          <div class="hero-details">
+            <span>◷ Sábados y domingos · 10:00–16:00</span>
+            <span>⌖ Ambato, Ecuador</span>
+          </div>
+        </div>
+        <div class="hero-image" role="img" aria-label="Pescado frito servido en plato">
+          <img src="imagenes/pescado-frito.svg" alt="">
+          <span class="image-sticker">Frito a<br>leña</span>
+        </div>
+      </div>
+
+      <div class="notice-row">
+        <div class="open-status"><span class="status-dot"></span><span id="estado-horario">Cerrado ahora · Abrimos sábado a las 10:00</span></div>
+        <p>Tu pedido estará listo en <strong id="tiempo-preparacion">25 minutos</strong> desde que confirmemos tu pago.</p>
+      </div>
+
+      <section class="process-strip" aria-label="Proceso del pedido">
+        <div class="process-strip-heading"><p class="eyebrow">Así de fácil</p><h2>De tu pantalla a la mesa</h2></div>
+        <ol class="process-line">
+          <li><span>1</span><b>Elige tus platos</b><small>Arma tu pedido</small></li>
+          <li><span>2</span><b>Paga y adjunta</b><small>Sube una captura</small></li>
+          <li><span>3</span><b>Revisamos el pago</b><small>En el restaurante</small></li>
+          <li><span>4</span><b>Preparamos</b><small>Te avisamos al estar listo</small></li>
+        </ol>
+      </section>
+
+      <section id="customer-tracking" class="tracking-panel" aria-live="polite" hidden>
+        <div class="tracking-heading"><div><p class="eyebrow">Seguimiento</p><h2 id="tracking-title">Tu pedido</h2></div><span id="tracking-status" class="order-status"></span></div>
+        <ol id="tracking-steps" class="tracking-steps"></ol>
+        <p id="tracking-message"></p>
+      </section>
+
+      <section class="menu-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">Preparado al momento</p><h2>Nuestro menú</h2></div>
+          <span class="menu-note">Ejemplos [PENDIENTE] · USD</span>
+        </div>
+        <div id="menu-lista" class="menu-grid"></div>
+      </section>
+
+      <section class="social-row" aria-label="Encuéntranos">
+        <div><span class="social-icon">⌖</span><span><b>Ven a visitarnos</b><small>Ambato, Ecuador</small></span><a id="link-maps" href="#" target="_blank" rel="noopener">Cómo llegar ↗</a></div>
+        <div><span class="social-icon social-instagram">◎</span><span><b>Síguenos en Instagram</b><small>@anaryfood</small></span><a id="link-instagram" href="#" target="_blank" rel="noopener">Ver perfil ↗</a></div>
+        <div><span class="social-icon social-tiktok">♪</span><span><b>Estamos en TikTok</b><small>@anary.food</small></span><a id="link-tiktok" href="#" target="_blank" rel="noopener">Ver videos ↗</a></div>
+      </section>
+    </section>
+
+    <section id="vista-cajera" class="view staff-view">
+      <div class="staff-heading">
+        <div><p class="eyebrow">Panel de pedidos</p><h1>Hola, cajera <span>☀</span></h1><p>Revisa la captura. Al confirmar el pago, habilita impresión para cocina y aviso al motorizado.</p></div>
+        <span class="role-pill">CAJA</span>
+      </div>
+      <div class="stats-row" id="stats-cajera"></div>
+      <div class="orders-heading"><h2>Pedidos recientes</h2><span>Los nuevos pedidos aparecen aquí</span></div>
+      <div id="lista-cajera" class="orders-list"></div>
+    </section>
+
+    <section id="vista-cocina" class="view staff-view">
+      <div class="staff-heading">
+        <div><p class="eyebrow">Panel de cocina</p><h1>Comandas <span>♨</span></h1><p>Las comandas aparecen cuando caja envía el pedido a imprimir.</p></div>
+        <span class="role-pill role-kitchen">COCINA</span>
+      </div>
+      <div class="orders-heading"><h2>En preparación</h2><span id="conteo-cocina"></span></div>
+      <div id="lista-cocina" class="orders-list"></div>
+    </section>
+
+    <section id="vista-motorizado" class="view staff-view">
+      <div class="staff-heading">
+        <div><p class="eyebrow">Panel de entrega</p><h1>Entregas <span>🛵</span></h1><p>Pedidos listos para retirar y llevar al cliente.</p></div>
+        <span class="role-pill role-delivery">DELIVERY</span>
+      </div>
+      <div class="orders-heading"><h2>Listos para entregar</h2><span id="conteo-delivery"></span></div>
+      <div id="lista-motorizado" class="orders-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>🐟 Anary Sea Food</span><span>Hecho en Ambato con sabor a leña.</span>
+  </footer>
+
+  <div id="cart-bar" class="cart-bar" hidden>
+    <button id="cart-open" class="cart-button">
+      <span class="cart-count"><span id="cart-count">0</span><small>Ver pedido</small></span>
+      <span class="cart-total-label">Total estimado</span>
+      <strong id="cart-total">$0,00</strong>
+      <span class="cart-arrow">→</span>
+    </button>
+  </div>
+
+  <div id="order-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <div><p class="eyebrow">Casi listo</p><h2 id="modal-title">Tu pedido</h2></div>
+        <button class="close-button" data-close-modal aria-label="Cerrar">×</button>
+      </div>
+      <div id="cart-lines"></div>
+      <div class="subtotal-line"><span>Platos</span><strong id="subtotal"></strong></div>
+      <div class="delivery-options">
+        <label class="choice-card selected" id="choice-pickup"><input type="radio" name="delivery" value="retirar" checked><span class="choice-icon">⌂</span><span><b>Para retirar</b><small>Elige tu hora</small></span></label>
+        <label class="choice-card" id="choice-delivery"><input type="radio" name="delivery" value="domicilio"><span class="choice-icon">⌖</span><span><b>Domicilio</b><small>Solo Ambato</small></span></label>
+      </div>
+      <div id="pickup-fields" class="form-grid">
+        <label>Fecha de retiro<select id="pickup-date"></select></label>
+        <label>Hora disponible<select id="pickup-time"></select></label>
+      </div>
+      <div id="delivery-fields" class="form-grid" hidden>
+        <label>Dirección<input id="address" placeholder="Calle, número y sector" autocomplete="street-address"></label>
+        <label>Referencia<input id="reference" placeholder="Ej. casa azul, junto al parque"></label>
+      </div>
+      <div class="form-grid customer-fields">
+        <label>Tu nombre<input id="customer-name" placeholder="Nombre y apellido" autocomplete="name"></label>
+        <label>Teléfono<input id="customer-phone" placeholder="09..." inputmode="tel" autocomplete="tel"></label>
+        <label class="wide">Nota para cocina <textarea id="customer-notes" rows="2" placeholder="Ej. sin cebolla"></textarea></label>
+      </div>
+      <div class="payment-box">
+        <div class="payment-copy"><span class="payment-icon">✓</span><div><b>Elige cómo pagar</b><small>Luego adjunta la captura para que caja pueda revisarla.</small></div></div>
+        <div class="payment-methods">
+          <label class="payment-choice selected"><input type="radio" name="payment-method" value="Deuna" checked><span>Deuna · QR</span></label>
+          <label class="payment-choice"><input type="radio" name="payment-method" value="Transferencia"><span>Transferencia</span></label>
+        </div>
+        <div id="deuna-payment" class="payment-instructions">
+          <img id="payment-qr" src="imagenes/deuna-qr.svg" alt="QR de Deuna de ejemplo">
+          <span>Escanea el código QR de Deuna.</span>
+        </div>
+        <div id="transfer-payment" class="transfer-details" hidden><b>Datos para transferencia</b><span id="bank-details"></span></div>
+        <label class="upload-proof">Adjuntar captura de pago <span>Imagen JPG o PNG</span><input id="proof-file" type="file" accept="image/*"></label>
+        <div id="proof-preview" class="proof-preview" hidden>
+          <img id="proof-preview-image" alt="Vista previa del comprobante">
+          <span id="proof-preview-name"></span>
+          <button id="remove-proof" type="button" class="remove-proof">Quitar</button>
+        </div>
+        <p class="demo-note">En este demo la imagen se guarda solo en este navegador para mostrar el flujo.</p>
+      </div>
+      <div class="totals-box" id="totals-box"></div>
+      <button id="submit-order" class="primary-button">Enviar pedido y comprobante <span>→</span></button>
+      <p class="small-print">La cocina comenzará cuando el restaurante verifique tu pago y envíe la comanda.</p>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="datos/configuracion.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
